@@ -1,0 +1,36 @@
+# Default parameters for all config section
+global:
+  scrape_interval: 1m
+  scrape_timeout: 10s
+
+# Define targets and configs for metrics collection
+# Job : A collection of instances that needs to be scraped.
+scrape_config:
+  job_name: 'nodes'
+  scrape_interval: 30s     # Config for scrape job. Takes precedenc over global config
+  scrape_timeout: 3s
+  scheme: https
+  metrics_path: /stat/metrics
+  static_config:
+    - targets: [ '3.111.23.25', '13.235.16.40' ]    # Sets of targets to be scraped
+
+
+
+# Configuration related to Alert Manager
+alerting:
+
+
+# Rule files specifies a list of files rules 
+rule_files:
+
+
+# Settings related to the read/write feature.
+remote_read:
+remote_write:
+
+
+# Storage related settings
+storage: 
+
+basic_auth:
+
